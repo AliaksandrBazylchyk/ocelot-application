@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-application", "ocelo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-identityServer", "ocelot-identityServer\ocelot-identityServer.csproj", "{908EE987-C04B-42FC-BF1D-0B8AB9119C05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ocelot-securedApi", "ocelot-securedApi\ocelot-securedApi.csproj", "{864020AC-5E44-40C3-8C9F-5B8E22770917}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-securedApi", "ocelot-securedApi\ocelot-securedApi.csproj", "{864020AC-5E44-40C3-8C9F-5B8E22770917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ocelot-unsecuredApi", "ocelot-unsecuredApi\ocelot-unsecuredApi.csproj", "{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{864020AC-5E44-40C3-8C9F-5B8E22770917}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{864020AC-5E44-40C3-8C9F-5B8E22770917}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{864020AC-5E44-40C3-8C9F-5B8E22770917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
