@@ -18,7 +18,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Secured/{number}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "ocelot-securedapi",

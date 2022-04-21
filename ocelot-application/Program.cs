@@ -7,8 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Configurations loader
 IConfiguration ocelotConfiguration = new ConfigurationBuilder()
     .SetBasePath(builder.Environment.ContentRootPath)
-    .AddJsonFile($"ocelot-securedApi.json", true, true)
-    .AddJsonFile($"ocelot-unsecuredApi.json", true, true)
+    //.AddJsonFile($"ocelot-securedApi.json", true, true)
+    //.AddJsonFile($"ocelot-unsecuredApi.json", true, true)
+    .AddJsonFile($"ocelot.json", true, true)
     .Build();
 
 // Services loader
