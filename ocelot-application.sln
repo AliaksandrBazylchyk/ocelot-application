@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-identityServer", "oc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-securedApi", "ocelot-securedApi\ocelot-securedApi.csproj", "{864020AC-5E44-40C3-8C9F-5B8E22770917}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ocelot-unsecuredApi", "ocelot-unsecuredApi\ocelot-unsecuredApi.csproj", "{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-unsecuredApi", "ocelot-unsecuredApi\ocelot-unsecuredApi.csproj", "{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
