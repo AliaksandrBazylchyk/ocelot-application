@@ -20,7 +20,7 @@ builder.Services.AddAuthentication(s =>
     s.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(options =>
 {
-    options.Authority = "http://ocelot.identityserver:80";
+    options.Authority = "http://ocelot-identityserver:80";
     /*********************************************************/
     /*              Comment this code on Release             */
     /*********************************************************/
