@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-application", "ocelot-application\ocelot-application.csproj", "{15247AB9-ECBF-448E-B3A5-3EFD6B5FF783}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-identityServer", "ocelot-identityServer\ocelot-identityServer.csproj", "{908EE987-C04B-42FC-BF1D-0B8AB9119C05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-securedApi", "ocelot-securedApi\ocelot-securedApi.csproj", "{864020AC-5E44-40C3-8C9F-5B8E22770917}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot-unsecuredApi", "ocelot-unsecuredApi\ocelot-unsecuredApi.csproj", "{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15247AB9-ECBF-448E-B3A5-3EFD6B5FF783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15247AB9-ECBF-448E-B3A5-3EFD6B5FF783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15247AB9-ECBF-448E-B3A5-3EFD6B5FF783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15247AB9-ECBF-448E-B3A5-3EFD6B5FF783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{908EE987-C04B-42FC-BF1D-0B8AB9119C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{908EE987-C04B-42FC-BF1D-0B8AB9119C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{908EE987-C04B-42FC-BF1D-0B8AB9119C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{908EE987-C04B-42FC-BF1D-0B8AB9119C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{864020AC-5E44-40C3-8C9F-5B8E22770917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{864020AC-5E44-40C3-8C9F-5B8E22770917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{864020AC-5E44-40C3-8C9F-5B8E22770917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{864020AC-5E44-40C3-8C9F-5B8E22770917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF3A4B8-DD53-4A99-BE3E-FD4DCB92DC95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{904540E4-0BAE-4F3B-8384-A61AC1BFBC60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AFC5EFA-AB79-455D-AF3D-9DED4C8F78DE}
+	EndGlobalSection
+EndGlobal

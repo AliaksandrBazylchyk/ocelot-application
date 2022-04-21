@@ -1,0 +1,36 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Secured",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ocelot-securedapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/secured",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": ["API"]
+      },
+      "UpstreamHttpMethod": ["GET", "POST"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Secured/{number}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ocelot-securedapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/secured/{number}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": ["API"]
+      },
+      "UpstreamHttpMethod": ["GET"]
+    }
+  ]
+}

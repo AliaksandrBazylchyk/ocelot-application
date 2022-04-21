@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+  ocelot-application:
+    image: ${DOCKER_REGISTRY-}ocelotapplication
+    container_name: ocelot-application
+    ports:
+        - "4000:80"
+    build:
+      context: .
+      dockerfile: ocelot-application/Dockerfile
+
+  ocelot-identityserver:
+    image: ${DOCKER_REGISTRY-}ocelotidentityserver
+    container_name: ocelot-identityServer
+    ports:
+        - "5000:80"
+    build:
+      context: .
+      dockerfile: ocelot-identityServer/Dockerfile
+
+
+  ocelot-securedapi:
+    image: ${DOCKER_REGISTRY-}ocelotsecuredapi
+    container_name: ocelot-securedApi
+    build:
+      context: .
+      dockerfile: ocelot-securedApi/Dockerfile
+
+
+  ocelot-unsecuredapi:
+    image: ${DOCKER_REGISTRY-}ocelotunsecuredapi
+    container_name: ocelot-unsecuredApi
+    build:
+      context: .
+      dockerfile: ocelot-unsecuredApi/Dockerfile
+
