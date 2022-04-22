@@ -1,13 +1,12 @@
 using IdentityModel.Client;
 using NUnit.Framework;
+using ocelot_common;
 using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text.Json;
 using System.Threading.Tasks;
-using NUnit.Framework.Interfaces;
 
 namespace ocelot_tests;
 
@@ -19,7 +18,7 @@ public class EndpointsTests
     public async Task IdentitySetup()
     {
         var httpClient = new HttpClient();
-        var disco = await httpClient.GetDiscoveryDocumentAsync("http://localhost:5000");
+        var disco = await httpClient.GetDiscoveryDocumentAsync(Constants.IdentityServerUrl);
         if (disco.IsError) throw new Exception(disco.Error);
 
         var credentials = new ClientCredentialsTokenRequest
@@ -36,7 +35,7 @@ public class EndpointsTests
                 Assert.Fail("Identity server is down");
                 break;
             case HttpStatusCode.Unauthorized:
-                Assert.Fail("Bad credentials");
+                Assert.Fail(HttpStatusErrorDescription.Unauthorized);
                 break;
             case HttpStatusCode.OK:
                 break;
@@ -58,7 +57,7 @@ public class EndpointsTests
     {
         var httpClient = new HttpClient();
 
-        var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:4000/secured");
+        var request = new HttpRequestMessage(HttpMethod.Get, Constants.SecuredApiGetRequest);
         request.Headers.Add(HttpRequestHeader.Authorization.ToString(), $"Bearer {_token.AccessToken}");
 
         var response = await httpClient.SendAsync(request);
@@ -68,7 +67,7 @@ public class EndpointsTests
                 Assert.Fail("Secured API is down");
                 break;
             case HttpStatusCode.Unauthorized:
-                Assert.Fail("Bad credentials");
+                Assert.Fail(HttpStatusErrorDescription.Unauthorized);
                 break;
             case HttpStatusCode.OK:
                 break;
@@ -89,7 +88,7 @@ public class EndpointsTests
     public async Task ShouldReturn200WithValidAnswerSecured(int number)
     {
         var httpClient = new HttpClient();
-        var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:4000/secured/{number}");
+        var request = new HttpRequestMessage(HttpMethod.Get, $"{Constants.SecuredApiGetRequest}/{number}");
 
         request.Headers.Add(HttpRequestHeader.Authorization.ToString(), $"Bearer {_token.AccessToken}");
 
@@ -100,7 +99,7 @@ public class EndpointsTests
                 Assert.Fail("Secured API is down");
                 break;
             case HttpStatusCode.Unauthorized:
-                Assert.Fail("Bad credentials");
+                Assert.Fail(HttpStatusErrorDescription.Unauthorized);
                 break;
             case HttpStatusCode.OK:
                 break;
@@ -123,9 +122,9 @@ public class EndpointsTests
     {
         var httpClient = new HttpClient();
 
-        var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:4000/secured");
+        var request = new HttpRequestMessage(HttpMethod.Post, Constants.SecuredApiPostRequest);
         request.Headers.Add(HttpRequestHeader.Authorization.ToString(), $"Bearer {_token.AccessToken}");
-        request.Content = JsonContent.Create(new {FirstName = firstName, LastName = lastName});
+        request.Content = JsonContent.Create(new { FirstName = firstName, LastName = lastName });
 
         var response = await httpClient.SendAsync(request);
         switch (response.StatusCode)
@@ -134,10 +133,10 @@ public class EndpointsTests
                 Assert.Fail("Secured API is down");
                 break;
             case HttpStatusCode.Unauthorized:
-                Assert.Fail("Bad credentials");
+                Assert.Fail(HttpStatusErrorDescription.Unauthorized);
                 break;
             case HttpStatusCode.UnsupportedMediaType:
-                Assert.Fail("Wrong body");
+                Assert.Fail(HttpStatusErrorDescription.UnsupportedMediaType);
                 break;
             case HttpStatusCode.OK:
                 break;
@@ -162,7 +161,7 @@ public class EndpointsTests
     {
         var httpClient = new HttpClient();
 
-        var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:4000/WeatherForecast");
+        var request = new HttpRequestMessage(HttpMethod.Get, Constants.UnsecuredApiGetRequest);
 
         var response = await httpClient.SendAsync(request);
         switch (response.StatusCode)
@@ -171,7 +170,7 @@ public class EndpointsTests
                 Assert.Fail("Unsecured API is down");
                 break;
             case HttpStatusCode.Unauthorized:
-                Assert.Fail("Bad credentials");
+                Assert.Fail(HttpStatusErrorDescription.Unauthorized);
                 break;
             case HttpStatusCode.OK:
                 break;
