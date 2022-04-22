@@ -1,12 +1,12 @@
 using IdentityModel.Client;
 using NUnit.Framework;
+using ocelot_common;
 using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using ocelot_common;
 
 namespace ocelot_tests;
 
@@ -124,7 +124,7 @@ public class EndpointsTests
 
         var request = new HttpRequestMessage(HttpMethod.Post, Constants.SecuredApiPostRequest);
         request.Headers.Add(HttpRequestHeader.Authorization.ToString(), $"Bearer {_token.AccessToken}");
-        request.Content = JsonContent.Create(new {FirstName = firstName, LastName = lastName});
+        request.Content = JsonContent.Create(new { FirstName = firstName, LastName = lastName });
 
         var response = await httpClient.SendAsync(request);
         switch (response.StatusCode)
