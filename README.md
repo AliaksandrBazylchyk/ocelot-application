@@ -1,6 +1,6 @@
 # ocelot-application
 
-## Inteoduction
+## Introduction
 Implementation of a microservice application in .NET 6.0
 using Ocelot Gateway to communicate between services.
 
