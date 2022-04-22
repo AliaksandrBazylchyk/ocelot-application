@@ -18,8 +18,8 @@ public class EndpointsTests
     [OneTimeSetUp]
     public async Task IdentitySetup()
     {
-        var client = new HttpClient();
-        var disco = await client.GetDiscoveryDocumentAsync("http://localhost:5000");
+        var httpClient = new HttpClient();
+        var disco = await httpClient.GetDiscoveryDocumentAsync("http://localhost:5000");
         if (disco.IsError) throw new Exception(disco.Error);
 
         var credentials = new ClientCredentialsTokenRequest
@@ -29,7 +29,7 @@ public class EndpointsTests
             ClientSecret = "secret_key",
             Scope = "API"
         };
-        var tokenResponse = await client.RequestClientCredentialsTokenAsync(credentials);
+        var tokenResponse = await httpClient.RequestClientCredentialsTokenAsync(credentials);
         switch (tokenResponse.HttpStatusCode)
         {
             case HttpStatusCode.BadGateway:
@@ -45,8 +45,9 @@ public class EndpointsTests
                 break;
         }
 
-        client.Dispose();
         _token = tokenResponse;
+
+        httpClient.Dispose();
 
         Assert.Pass();
     }
@@ -78,6 +79,8 @@ public class EndpointsTests
 
         var answer = await response.Content.ReadAsStringAsync();
 
+        httpClient.Dispose();
+
         Assert.IsNotNull(answer);
     }
 
@@ -108,6 +111,8 @@ public class EndpointsTests
 
         var content = await response.Content.ReadAsStringAsync();
         var answer = int.Parse(content.Split(' ').Last());
+
+        httpClient.Dispose();
 
         Assert.AreEqual(answer, number * number, $"Return 200 with data: '{answer}' but excepted {number * number}");
     }
@@ -143,6 +148,8 @@ public class EndpointsTests
 
         var answer = await response.Content.ReadAsStringAsync();
 
+        httpClient.Dispose();
+
         Assert.AreEqual(
             answer,
             $"Your secured name: {firstName} {lastName}",
@@ -174,6 +181,8 @@ public class EndpointsTests
         }
 
         var answer = await response.Content.ReadAsStringAsync();
+
+        httpClient.Dispose();
 
         Assert.IsNotNull(answer);
     }
